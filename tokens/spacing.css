@@ -1,0 +1,31 @@
+/* Spacing — 4px base rhythm. Layouts are generous and calm;
+   posts and cards breathe with wide internal padding. */
+
+:root {
+  --sp-0: 0;
+  --sp-1: 0.25rem;   /* 4 */
+  --sp-2: 0.5rem;    /* 8 */
+  --sp-3: 0.75rem;   /* 12 */
+  --sp-4: 1rem;      /* 16 */
+  --sp-5: 1.5rem;    /* 24 */
+  --sp-6: 2rem;      /* 32 */
+  --sp-7: 2.5rem;    /* 40 */
+  --sp-8: 3rem;      /* 48 */
+  --sp-9: 4rem;      /* 64 */
+  --sp-10: 5rem;     /* 80 */
+  --sp-12: 7rem;     /* 112 */
+  --sp-16: 10rem;    /* 160 */
+
+  /* Layout */
+  --container: 1200px;
+  --container-narrow: 720px;   /* reading measure for stories */
+  --gutter: 1.5rem;
+
+  /* Radii — analog and restrained. Cards are essentially square,
+     matching the hard-edged text cards in the posts. */
+  --r-none: 0;
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-pill: 999px;
+}

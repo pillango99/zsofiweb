@@ -1,0 +1,9 @@
+/* Fonts — webfont declarations for the design system.
+   NOTE: substitution in effect. Kriszta's own typewriter font file has not
+   been supplied yet. Until it is, the brand mono is IBM Plex Mono (a warm,
+   humanist monospace with full Hungarian diacritics: ő ű á é í ó ú ö ü).
+   Reading serif is Newsreader (editorial literary serif, full diacritics).
+   To swap in the real font: drop the file in assets/fonts/, replace the
+   @import below with an @font-face pointing at it, and update --font-mono. */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap");

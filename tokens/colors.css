@@ -1,0 +1,46 @@
+/* Colors — sampled directly from Kriszta's own posts.
+   Three signature accents (the text colors she uses on cards) sit on a
+   family of warm analog papers. Everything is earthy and slightly desaturated;
+   nothing is pure black or pure white. */
+
+:root {
+  /* ---- Signature accents ---- */
+  --oxblood: #6D1517;      /* primary brand color — the bordó text */
+  --oxblood-deep: #571013; /* pressed / darker */
+  --burnt: #B35304;        /* burnt orange text */
+  --burnt-deep: #8F4103;
+  --navy: #1E3A5F;         /* deep Danube blue text */
+  --navy-deep: #142a47;
+  --sky: #6BB3FF;          /* bright sky blue — rare highlight, use sparingly */
+
+  /* ---- Papers & surfaces (backgrounds of the text cards) ---- */
+  --paper: #F4EFE4;        /* main warm off-white page background */
+  --paper-2: #EDE6D6;      /* slightly deeper section background */
+  --cream: #E7E0CE;        /* lined-notebook cream card */
+  --kraft: #C2A277;        /* kraft cardboard card */
+  --kraft-deep: #A6875C;
+  --paper-white: #F6F5F1;  /* crumpled white paper card */
+
+  /* ---- Ink & neutrals (warm, never neutral-gray) ---- */
+  --ink: #241E1B;          /* primary text — warm near-black */
+  --ink-2: #4A3F39;        /* secondary text */
+  --ink-3: #736659;        /* muted / captions */
+  --line: #D8CEBC;         /* hairline borders on paper */
+  --line-strong: #B8AB93;
+
+  /* ---- Semantic aliases ---- */
+  --brand: var(--oxblood);
+  --brand-ink: var(--paper);            /* text on brand fills */
+  --bg-page: var(--paper);
+  --bg-section: var(--paper-2);
+  --bg-dark: var(--oxblood);            /* dramatic dark sections */
+  --bg-dark-ink: #F1E4D8;               /* warm cream text on oxblood */
+  --surface-card: var(--paper-white);
+  --text-strong: var(--ink);
+  --text-body: var(--ink-2);
+  --text-muted: var(--ink-3);
+  --text-link: var(--oxblood);
+  --border: var(--line);
+  --border-strong: var(--line-strong);
+  --focus-ring: var(--burnt);
+}

@@ -1,0 +1,52 @@
+/* Typography — a two-voice system.
+   MONO (IBM Plex Mono): the brand voice. Wordmark, headings, labels,
+   buttons, post text. Nearly always UPPERCASE with generous letter-spacing —
+   this is the typewriter identity of the posts.
+   SERIF (Newsreader): the reading voice. Long-form short stories, book
+   excerpts, and body prose where comfort matters. Sentence case. */
+
+:root {
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+
+  /* Weights */
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
+
+  /* Type scale (rem @ 16px base) */
+  --fs-2xs: 0.6875rem;  /* 11px — micro labels */
+  --fs-xs: 0.75rem;     /* 12px — eyebrow / meta */
+  --fs-sm: 0.875rem;    /* 14px — UI, captions */
+  --fs-base: 1rem;      /* 16px */
+  --fs-md: 1.125rem;    /* 18px — reading body */
+  --fs-lg: 1.375rem;    /* 22px */
+  --fs-xl: 1.75rem;     /* 28px */
+  --fs-2xl: 2.25rem;    /* 36px */
+  --fs-3xl: 3rem;       /* 48px */
+  --fs-4xl: 4rem;       /* 64px — hero */
+  --fs-5xl: 5.5rem;     /* 88px — display */
+
+  /* Line heights */
+  --lh-tight: 1.1;
+  --lh-snug: 1.28;
+  --lh-normal: 1.5;
+  --lh-reading: 1.7;   /* long-form serif */
+
+  /* Letter-spacing — the mono caps identity leans on this */
+  --ls-tightest: -0.01em;
+  --ls-caps: 0.08em;   /* default for mono uppercase */
+  --ls-caps-wide: 0.16em; /* eyebrows, labels */
+  --ls-caps-xwide: 0.28em;
+
+  /* Semantic roles */
+  --type-display: var(--w-medium) var(--fs-5xl)/var(--lh-tight) var(--font-mono);
+  --type-h1: var(--w-medium) var(--fs-4xl)/var(--lh-tight) var(--font-mono);
+  --type-h2: var(--w-medium) var(--fs-2xl)/var(--lh-snug) var(--font-mono);
+  --type-h3: var(--w-medium) var(--fs-xl)/var(--lh-snug) var(--font-mono);
+  --type-eyebrow: var(--w-semibold) var(--fs-xs)/1 var(--font-mono);
+  --type-label: var(--w-medium) var(--fs-sm)/1.2 var(--font-mono);
+  --type-body: var(--w-regular) var(--fs-md)/var(--lh-reading) var(--font-serif);
+  --type-ui: var(--w-regular) var(--fs-sm)/var(--lh-normal) var(--font-mono);
+}
