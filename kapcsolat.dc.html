@@ -24,6 +24,7 @@
   .z-link:hover{opacity:1!important}
   ::selection{background:#7A1416;color:#EDE7DB}
   input::placeholder,textarea::placeholder{color:rgba(237,231,219,.5)}
+  .z-form input::placeholder,.z-form textarea::placeholder{color:rgba(42,35,32,.45)}
   @media(max-width:920px){ .z-contact{grid-template-columns:1fr!important} }
 </style>
 </helmet>
@@ -40,7 +41,7 @@
     <a class="z-navlink" aria-current="page" href="kapcsolat.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Kapcsolat</a>
       <div style="display:flex; align-items:center; gap:16px; margin-left:8px">
         <a class="z-navlink" href="https://www.instagram.com/mozeszsofi/" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex; align-items:center; color:var(--z-light); opacity:.82; text-decoration:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"></circle></svg></a>
-        <a class="z-navlink" href="https://www.facebook.com/zsofi.mozes" target="_blank" rel="noopener" aria-label="Facebook" style="display:flex; align-items:center; color:var(--z-light); opacity:.82; text-decoration:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"></path></svg></a>
+        <a class="z-navlink" href="https://www.facebook.com/mozeszsofi/" target="_blank" rel="noopener" aria-label="Facebook" style="display:flex; align-items:center; color:var(--z-light); opacity:.82; text-decoration:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"></path></svg></a>
       </div>
     </nav>
   </header>
@@ -54,17 +55,17 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="z-contact" style="display:grid; grid-template-columns:1.05fr .95fr; gap:0; align-items:stretch">
+  <section class="z-contact" style="display:grid; grid-template-columns:1fr 1fr; gap:2px; align-items:stretch; background:var(--z-red-deep)">
     
-    <div style="order:2; background-color:var(--z-paper); background-image:url(assets/zsofi/grain.png); background-size:220px; display:flex; flex-direction:column; justify-content:center; padding:80px 64px">
-      <h2 style="font-family: var(--font-mono); font-weight: 600; font-size: clamp(24px,3vw,34px); letter-spacing: .03em; text-transform: uppercase; line-height: 1.12; color: var(--z-red); margin: 0 0 22px; width: 579px; height: 49px">Írj egy üzenetet</h2><form onSubmit="{{ noSubmit }}" style="display: flex; flex-direction: column; gap: 20px; max-width: 460px; width: 448px; height: 157px">
-        <input type="text" placeholder="Neved" aria-label="Név" style="background:transparent; border:none; border-bottom:2px solid rgba(42,35,32,.3); color:var(--z-ink); font-family:var(--font-mono); font-size:15px; letter-spacing:.04em; padding:12px 4px; outline:none">
-        <input type="email" placeholder="te@pelda.hu" aria-label="E-mail" style="background:transparent; border:none; border-bottom:2px solid rgba(42,35,32,.3); color:var(--z-ink); font-family:var(--font-mono); font-size:15px; letter-spacing:.04em; padding:12px 4px; outline:none">
-        <textarea placeholder="Miről szeretnél írni?" aria-label="Üzenet" rows="4" style="background:transparent; border:none; border-bottom:2px solid rgba(42,35,32,.3); color:var(--z-ink); font-family:var(--font-serif); font-size:16px; line-height:1.5; padding:12px 4px; outline:none; resize:none"></textarea>
-        <button class="z-btn-solid" type="submit" style="align-self:flex-start; margin-top:8px; font-family:var(--font-mono); font-weight:600; font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--z-light); background:var(--z-red); border:none; padding:15px 30px; cursor:pointer; transition:background var(--dur) var(--ease)">Elküldöm →</button>
+    <div style="order:2; background-color:var(--z-paper); background-image:url(assets/zsofi/grain.png); background-size:220px; display:flex; flex-direction:column; justify-content:center; padding:56px 64px">
+      <h2 style="font-family: var(--font-mono); font-weight: 600; font-size: clamp(24px,3vw,34px); letter-spacing: .03em; text-transform: uppercase; line-height: 1.12; color: var(--z-red); margin: 0 0 28px">Írj egy üzenetet</h2><form class="z-form" onSubmit="{{ noSubmit }}" style="display: flex; flex-direction: column; gap: 22px; width: 100%">
+        <input type="email" placeholder="E-mail cím" aria-label="E-mail" style="background:transparent; border:none; border-bottom:2px solid rgba(42,35,32,.3); color:var(--z-ink); font-family:var(--font-mono); font-size:15px; letter-spacing:.04em; padding:12px 4px; outline:none">
+        <input type="text" placeholder="Név" aria-label="Név" style="background:transparent; border:none; border-bottom:2px solid rgba(42,35,32,.3); color:var(--z-ink); font-family:var(--font-mono); font-size:15px; letter-spacing:.04em; padding:12px 4px; outline:none">
+        <textarea placeholder="Írd ide az üzeneted…" aria-label="Üzenet" rows="3" style="background:transparent; border:none; border-bottom:2px solid rgba(42,35,32,.3); color:var(--z-ink); font-family:var(--font-serif); font-size:16px; line-height:1.5; padding:12px 4px; outline:none; resize:none"></textarea>
+        <button class="z-btn-solid" type="submit" style="align-self:flex-start; font-family:var(--font-mono); font-weight:600; font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--z-light); background:var(--z-red); border:none; padding:15px 30px; cursor:pointer; transition:background var(--dur) var(--ease)">Elküldöm →</button>
       </form>
       
-    </div><div style="order:1; position: relative; background-color: var(--z-slate); background-image: url(assets/zsofi/grain.png); background-size: 240px; display: flex; flex-direction: column; justify-content: center; padding: 80px 64px; overflow: hidden; width: 489px; height: 388px">
+    </div><div style="order:1; position: relative; background-color: var(--z-slate); background-image: url(assets/zsofi/grain.png); background-size: 240px; display: flex; flex-direction: column; justify-content: center; padding: 56px 64px; overflow: hidden">
       <div style="position:absolute; inset:0; background-image:url(assets/zsofi/grain.png); background-size:220px; opacity:.28; pointer-events:none"></div>
       <div style="position:relative; z-index:1">
         <p style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--z-light); opacity:.72; margin:0 0 24px">Elérhetőség</p>
@@ -72,7 +73,7 @@
         <p style="font-family:var(--font-serif); font-size:17px; line-height:1.7; color:var(--z-light); opacity:.9; margin:0 0 26px; max-width:340px">Felolvasás, közös projekt, műhely vagy csak egy gondolat — minden levélnek örülök. Néhány napon belül válaszolok.</p>
         <div style="display:flex; gap:24px">
           <a class="z-link" href="https://www.instagram.com/mozeszsofi/" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--z-light); text-decoration:none; opacity:.85; transition:opacity var(--dur) var(--ease)">Instagram</a>
-          <a class="z-link" href="https://www.facebook.com/zsofi.mozes" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--z-light); text-decoration:none; opacity:.85; transition:opacity var(--dur) var(--ease)">Facebook</a>
+          <a class="z-link" href="https://www.facebook.com/mozeszsofi/" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--z-light); text-decoration:none; opacity:.85; transition:opacity var(--dur) var(--ease)">Facebook</a>
         </div>
       </div>
     </div>

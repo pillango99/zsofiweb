@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="styles.css">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  a{color:#7A1416}
+  a:hover{color:#5A1012}
+  .z-navlink{transition:opacity var(--dur) var(--ease)}
+  .z-navlink:hover{opacity:1!important}
+  .z-navlink[aria-current]{opacity:1!important;border-bottom:2px solid currentColor;padding-bottom:3px}
+  @media(max-width:820px){ .z-navlinks{gap:16px!important} .z-navlink{font-size:11px!important;letter-spacing:.1em!important} }
+  .z-card{transition:transform var(--dur) var(--ease)}
+  .z-card:hover{transform:translateY(-3px)}
+  ::selection{background:#7A1416;color:#EDE7DB}
+  @media(max-width:920px){ .z-writings{grid-template-columns:1fr!important} }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--z-red:#7A1416; --z-red-deep:#5A1012; --z-terra:#AD4B34; --z-navy:#355061; --z-slate:#49616F; --z-paper:#E2DDD1; --z-paper-2:#D5CFC0; --z-ink:#2A2320; --z-light:#EDE7DB; --z-hero:#7A1416; background:var(--z-paper); color:#2A2320; font-family:var(--font-mono); min-height:100vh; position:relative; overflow-x:hidden">
+
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 44px; background-color:var(--z-red); background-image:url(assets/zsofi/grain.png); background-size:220px; border-bottom:2px solid var(--z-red-deep)">
+    <a href="index.html" style="font-family:var(--font-mono); font-weight:600; text-transform:uppercase; letter-spacing:.2em; font-size:15px; color:var(--z-light); text-decoration:none; white-space:nowrap">Mózes Zsófi</a>
+    <nav class="z-navlinks" style="display:flex; align-items:center; gap:28px; flex-wrap:wrap; justify-content:flex-end">
+    <a class="z-navlink" href="rolam.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Rólam</a>
+    <a class="z-navlink" aria-current="page" href="szovegek.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Szövegek</a>
+    <a class="z-navlink" href="kurzusok.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Kurzusok</a>
+    <a class="z-navlink" href="hirlevel.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Hírlevél</a>
+    <a class="z-navlink" href="kapcsolat.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Kapcsolat</a>
+      <div style="display:flex; align-items:center; gap:16px; margin-left:8px">
+        <a class="z-navlink" href="https://www.instagram.com/mozeszsofi/" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex; align-items:center; color:var(--z-light); opacity:.82; text-decoration:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"></circle></svg></a>
+        <a class="z-navlink" href="https://www.facebook.com/mozeszsofi/" target="_blank" rel="noopener" aria-label="Facebook" style="display:flex; align-items:center; color:var(--z-light); opacity:.82; text-decoration:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"></path></svg></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- TITLE BAND -->
+  <section style="position:relative; background-color:var(--z-terra); background-image:url(assets/zsofi/grain.png); background-size:240px; padding:88px 44px 100px">
+    <div style="max-width:760px; margin:0 auto">
+      <a href="szovegek.dc.html" style="display:inline-block; font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--z-light); text-decoration:none; opacity:.8; margin-bottom:26px">← Vissza a szövegekhez</a>
+      <p style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.3em; text-transform:uppercase; color:var(--z-light); opacity:.7; margin:0 0 14px">Napló</p>
+      <h1 style="font-family:var(--font-mono); font-weight:600; font-size:clamp(20px,2.2vw,28px); letter-spacing:.02em; text-transform:uppercase; line-height:1.2; color:var(--z-light); margin:0 0 40px">Nem kell többet áttörölni, fertőtleníteni, kötést cserélni. Nincs már, ami feltépje a hámot</h1>
+        <img data-detail-img="" src="assets/zsofi/z-swan-6-crop.webp" alt="" style="display: block; width: 337px; aspect-ratio: 199/240; object-fit: cover; float: right; margin: 6px 0 20px 32px; height: 322px">
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">További intézkedést nem igényel, írja vastagon szedve a díjjegyzéken, ami a végrehajtói irodából érkezik. De hiába a jogi szöveg, a paragrafus jelek, a számok meg a táblázat, mégis, mintha egy zárójelentést olvasnék – a sebről, ami éveken keresztül tátongott rajtam. Ami közel egy évtizeden át újra és újra kifakadt, vérzett, gennyedzett. Amit néha én vakartam el, és olyan is volt, hogy valaki más tépte fel a vart.</p>
+        
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Huszonkét évesen, 2017 októberében tettem feljelentést kapcsolati erőszak, személyi szabadság megsértése és rongálás miatt – másodszor. Az első alkalommal megszüntették a nyomozást. Aztán hónapokkal később kiderült, hogy hiába a több oldalnyi bizonyíték, fénykép és látlelet, a rendőrség mégis inkább csak zaklatás ügyében kezd vizsgálódni.</p><p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Szakadt a plezúr, ahogy megtudtam, hogy Ádám sorozat-elkövető. Hogy bár feljelentést tettem, és a hatóságok birtokában volt minden, amivel megakadályozhatták volna, a szakításunk után a párja kezét törte el, majd az azt követő barátnőjét is rendszeresen megverte.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Amikor újabb vallomásokat kellett tennem, tételesen, bizonyítékokkal cáfolva a rengeteg mocskot. Hogy nem ő ütött monoklit a szemem köré, csak koncerten voltam, és hát én így szoktam szórakozni. Hogy hiába az igazságügyi orvosszakértő véleménye, ő nem tudja, tényleg, őszintén, hogy a másik lány keze miként tört el. És a harmadikat sem erőszakolta meg, egyszerűen így szeretik a szexet. Amikor a lakásom előtt állt az autója, meg amikor az anyja kommentekben kezdett fenyegetni.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Mélyült a seb minden alkalommal, amikor az ügyeletes orvos kihagyott sérüléseket a zárójelentésből, mert „az nem látszik eléggé a tetoválástól”, amikor elhalasztották a tárgyalást – vagy ha úgy is tűnt, hogy megtartják, végül a bíró volt az, aki nem jött el. Amikor megértettem, hogy a büntetőeljárás nem rólam szól. Ugyanolyan bizonyíték vagyok csak benne, mint bármelyik papír.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">És gyógyult is, legalább ennyiszer.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Azoktól az emberektől, akik itt vannak velem, akik úgy vesznek körül, hogy soha, egy pillanatra sem kérdőjelezték meg a történteket. A lakásunkba érkező rendőröktől, akik felismerték a helyzetet, és bevitték Ádámot, hogy nyugodtan tudjunk beszélni. Barátoktól, akik akkor is mellettem álltak, amikor nem tudtam mozdulni. Akik látták rajtam a sebet – volt, hogy szó szerint is –, és értették, hogy fáj, hogy nehéz. Hogy nem megy elsőre. Akik kocsiba ültettek, majd órákon át vártak velem a baleseti intézet narancssárga műanyagszékein, meg akik pénzt adtak, ha az illetékbélyegre nekem már nem maradt.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Gyógyult a kéztől, ami mindig utánam nyúlt. Ami húzott előre, ha nem tudtam lépni, vezetett, amikor nem láttam az utat, de muszáj volt haladni. Tartott szakadatlanul, amikor azt hittem, elértem a gödör alját, és úgy adott erőt, mintha soha ki nem fogyna belőle. Határozott mozdulattal nyomott szorító kötést a sebre, ahogy megmutattam neki. Nevet adott a fájdalomnak, szavakat arra, amiről sokáig csak neki mertem beszélni.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Leírta helyettem, amit még nem tudtam közel engedni magamhoz – hogy alulírott Mózes Zsófia a mellékletben csatolt meghatalmazással igazolt jogi képviselőm útján feljelentést kívánok tenni.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Kimondta, hogy bántalmazó, ki, hogy erőszak, hogy bűncselekmény. Bekezdéseket formált abból, amivel akkor nem tudtam szembesülni, és mindig csak annyit rakott rám, amennyit elbírtam.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Sosem áltatott, a legelején megmondta, hogy kurva kemény lesz. Hogy a büntetőeljárás a legritkább esetben szolgáltat csak igazságot úgy, hogy én is annak érzem. Hogy indíthatunk polgári pert, de kevés a precedens, a bírók nem tudnak mihez viszonyítani, lelki sérüléseket beárazni meg pláne. Hogy nem ígér semmit, mert a rendszer rohad, és ha ő ki is tisztítja a sebet, más tövig belenyomja az ujját majd.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Arról viszont nem beszélt, hogy akkor is mellettem lesz. Gondos odafigyeléssel ápolja a sérülést, töröl ki belőle minden piszkot, amit más belehányt – amíg meg nem tanulom, hogyan kell kezelni. Velem örül, amikor az ítéletben azt olvassuk végre, hogy a felperes személyiségét az alperes részéről érő támadás súlyossága külön bizonyítás nélkül is milliós nagyságrendű sérelemdíjat alapoz meg, és akkor is, amikor két évvel később a végrehajtó inkasszálja a pénzt.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Nem mondta, hogy itt lesz, amikor megtalálom a saját szavaimat, és ahogy a hangomat, úgy a szabadságomat is visszaadja majd.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Két feljelentés, két per, egy végrehajtási eljárás, és majdnem napra pontosan nyolc év – több mint az eddigi életem negyede. Az út végén pedig itt áll, feketén-fehéren: további intézkedést nem igényel. Nem kell többet áttörölni, fertőtleníteni, kötést cserélni. Láthatatlan burkot vont köré a hála, és nincs már, ami feltépje a hámot.</p>
+      <div style="clear:both; margin-top:48px; padding-top:28px; border-top:1px solid rgba(42,35,32,.18)">
+        <a href="szovegek.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--z-red); text-decoration:none">← Összes szöveg</a>
+      </div>
+    </div></section>
+
+  <dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1440, &quot;height&quot;: 1100 },
+  &quot;colorRed&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#7A1416&quot;, &quot;#AD4B34&quot;, &quot;#355061&quot;, &quot;#49616F&quot;], &quot;default&quot;: &quot;#7A1416&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorTerra&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#AD4B34&quot;, &quot;#7A1416&quot;, &quot;#B5652B&quot;, &quot;#355061&quot;], &quot;default&quot;: &quot;#AD4B34&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorNavy&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#355061&quot;, &quot;#49616F&quot;, &quot;#2E3A44&quot;, &quot;#7A1416&quot;], &quot;default&quot;: &quot;#355061&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorSlate&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#49616F&quot;, &quot;#355061&quot;, &quot;#5A6E5A&quot;, &quot;#AD4B34&quot;], &quot;default&quot;: &quot;#49616F&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorPaper&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#E2DDD1&quot;, &quot;#EDE7DB&quot;, &quot;#D5CFC0&quot;, &quot;#DED4C0&quot;], &quot;default&quot;: &quot;#E2DDD1&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; }
+}">
+class Component extends DCLogic {
+  constructor(props) { super(props); this.rootRef = React.createRef(); }
+  palette() {
+    return {
+      red: this.props.colorRed || "#7A1416",
+      terra: this.props.colorTerra || "#AD4B34",
+      navy: this.props.colorNavy || "#355061",
+      slate: this.props.colorSlate || "#49616F",
+      paper: this.props.colorPaper || "#E2DDD1",
+    };
+  }
+  applyVars() {
+    const el = this.rootRef.current; if (!el) return;
+    const p = this.palette();
+    el.style.setProperty("--z-red", p.red);
+    el.style.setProperty("--z-terra", p.terra);
+    el.style.setProperty("--z-navy", p.navy);
+    el.style.setProperty("--z-slate", p.slate);
+    el.style.setProperty("--z-paper", p.paper);
+    el.style.setProperty("--z-hero", p.red);
+  }
+  componentDidMount() { this.applyVars(); }
+  componentDidUpdate() { this.applyVars(); }
+  renderVals() { return { rootRef: this.rootRef }; }
+}
+</script>
+</body>
+</html>

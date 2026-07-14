@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="styles.css">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  a{color:#7A1416}
+  a:hover{color:#5A1012}
+  .z-navlink{transition:opacity var(--dur) var(--ease)}
+  .z-navlink:hover{opacity:1!important}
+  .z-navlink[aria-current]{opacity:1!important;border-bottom:2px solid currentColor;padding-bottom:3px}
+  @media(max-width:820px){ .z-navlinks{gap:16px!important} .z-navlink{font-size:11px!important;letter-spacing:.1em!important} }
+  .z-card{transition:transform var(--dur) var(--ease)}
+  .z-card:hover{transform:translateY(-3px)}
+  ::selection{background:#7A1416;color:#EDE7DB}
+  @media(max-width:920px){ .z-writings{grid-template-columns:1fr!important} }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--z-red:#7A1416; --z-red-deep:#5A1012; --z-terra:#AD4B34; --z-navy:#355061; --z-slate:#49616F; --z-paper:#E2DDD1; --z-paper-2:#D5CFC0; --z-ink:#2A2320; --z-light:#EDE7DB; --z-hero:#7A1416; background:var(--z-paper); color:#2A2320; font-family:var(--font-mono); min-height:100vh; position:relative; overflow-x:hidden">
+
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 44px; background-color:var(--z-red); background-image:url(assets/zsofi/grain.png); background-size:220px; border-bottom:2px solid var(--z-red-deep)">
+    <a href="index.html" style="font-family:var(--font-mono); font-weight:600; text-transform:uppercase; letter-spacing:.2em; font-size:15px; color:var(--z-light); text-decoration:none; white-space:nowrap">Mózes Zsófi</a>
+    <nav class="z-navlinks" style="display:flex; align-items:center; gap:28px; flex-wrap:wrap; justify-content:flex-end">
+    <a class="z-navlink" href="rolam.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Rólam</a>
+    <a class="z-navlink" aria-current="page" href="szovegek.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Szövegek</a>
+    <a class="z-navlink" href="kurzusok.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Kurzusok</a>
+    <a class="z-navlink" href="hirlevel.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Hírlevél</a>
+    <a class="z-navlink" href="kapcsolat.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Kapcsolat</a>
+      <div style="display:flex; align-items:center; gap:16px; margin-left:8px">
+        <a class="z-navlink" href="https://www.instagram.com/mozeszsofi/" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex; align-items:center; color:var(--z-light); opacity:.82; text-decoration:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"></circle></svg></a>
+        <a class="z-navlink" href="https://www.facebook.com/mozeszsofi/" target="_blank" rel="noopener" aria-label="Facebook" style="display:flex; align-items:center; color:var(--z-light); opacity:.82; text-decoration:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"></path></svg></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- TITLE BAND -->
+  <section style="position:relative; background-color:var(--z-navy); background-image:url(assets/zsofi/grain.png); background-size:240px; padding:88px 44px 64px">
+    <div style="max-width:760px; margin:0 auto">
+      <a href="szovegek.dc.html" style="display:inline-block; font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--z-light); text-decoration:none; opacity:.8; margin-bottom:26px">← Vissza a szövegekhez</a>
+      <p style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.3em; text-transform:uppercase; color:var(--z-light); opacity:.7; margin:0 0 14px">Napló</p>
+      <h1 style="font-family:var(--font-mono); font-weight:600; font-size:clamp(30px,4.4vw,52px); letter-spacing:.03em; text-transform:uppercase; line-height:1.04; color:var(--z-light); margin:0">Tök sok közünk van hozzá</h1>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <section style="background-color:var(--z-paper); background-image:url(assets/zsofi/grain.png); background-size:220px; padding:72px 44px 100px">
+    <div style="max-width:760px; margin:0 auto">
+        <img data-detail-img="" src="assets/zsofi/z-swan-1-crop.webp" alt="" style="display: block; width: 300px; aspect-ratio: 203/257; object-fit: cover; float: right; margin: 6px 0 20px 32px; height: 380px">
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Nem volt olyan rég, hogy R. esete bejárta a sajtót – tudjátok, ő az a képzőművészetis hallgató, akit évekkel korábban megerőszakolt egy diáktársa. Az áldozat jogi képviselője szerint végül azzal az indoklással mentették fel a férfit, hogy a beleegyezés hiánya önmagában még nem teszi nemi erőszakká a történteket, ráadásul a nő nem ellenkezett elég hangosan (!) a férfival szemben.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Annak ellenére, hogy az ítélet hatalmas felháborodást keltett, a bírónak jogi értelemben igaza van: a magyar jogszabályok szerint ugyanis csak akkor beszélhetünk szexuális erőszakról, ha az fizikai kényszerítés, fenyegetés vagy az áldozat cselekvőképtelensége mellett valósul meg – más esetben nem.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Így hát nem erőszak, ha nem egyezel bele. Nem erőszak, ha előtte kinyitod a kollégiumi szobád ajtaját, nem erőszak, ha lefagysz, ha a tudatod lezár, ha nem tiltakozol eléggé vagy elég egyértelműen. Hogy kinek tiszte megítélni, hogy mi az elég? Az legtöbbször a vakszerencsén múlik.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Amikor először beszéltem az engem ért erőszakról, szerencsém volt. Olyan nyomozóhoz került az ügyem, aki – a rendszer adta keretekhez képest – empátiával fordult hozzám. Aki a kihallgatás során elnézést kért, mielőtt feltette a kötelező kérdést, elmondta, hogy nem hibáztat, de az ügyészség mindenképp meg fogja kérdezni, hogy miért maradtam hónapokig a kapcsolatban.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Volt tér, hogy beszéljek arról, amire egyértelmű bizonyítékom volt, és tett érte, hogy meséljek arról is, amire nem. Például, amikor Ádám megerőszakolt. Nem mentem orvoshoz, nincs róla ambuláns lapom, csak egy barátnőmnek meséltem az esetről, aki ezután törölte Ádámot az ismerősei közül. Felelősségvállalás helyett viszont az ezzel kapcsolatos számonkérés maradt csak – meg a narratíva, hogy senkinek semmi köze hozzá.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Később egy másik barátnőjét is megerőszakolta, volt róla vallomás, jegyzőkönyv a részletekről, térben és időben is összeállt a történet, ráadásul az áldozatok egymástól független, mégis nagyon hasonló megélései egymást erősítették. A kihallgatás során Ádám mégis azt mondta, hogy konszenzusos együttlét volt, a lány durván szereti. Ez pedig magánügy, ugye, olyan, amihez – ekkorra már tudtuk jól – másnak nincs köze. Hiszen nincs szemtanú, fotó, ambuláns lap vagy látlelet, beismerés nélkül pedig súlytalan minden, amit az áldozatok állítanak.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Tegnap aztán hatalmasat fordult a világ – sokunkkal legalábbis. Az EP-képviselők felszólították a tagállamokat, hogy a nemi erőszak meghatározásával kapcsolatos jogszabályaikat hangolják össze a nemzetközi normákkal. Egyrészt álljunk itt meg egy pillanatra, és ízlelgessük, hogy vannak nemzetközi normák (meg ezekre épülő törvények, például Franciaországban). Az EP-képviselők szerint ugyanis a beleegyezést minden esetben a körülmények figyelembevételével kellene vizsgálni, beleértve például a fenyegetést, a hatalommal való visszaélést, a megfélemlítést, a tudatmódosult állapotot, az elkábítást, az alvást, a betegséget, a fogyatékosságot vagy a kiszolgáltatottságot. Másrészt hangsúlyozták azt is, hogy a traumára adott reakcióknak – így a nagyon gyakori lefagyásnak is – tükröződniük kell a jogszabályokban és a bírósági gyakorlatban.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Néhány héttel ezelőtt Románia hozott olyan törvényt, amely jogi értelemben határozza meg a nőgyilkosság fogalmát, a nők elleni erőszak megelőzése érdekében pedig az iskolai tananyag részévé válnak olyan témák, mint a nemek közötti egyenlőség, a nők elleni erőszak formái, valamint a békés, erőszakmentes kapcsolatok etikája a családban, a közösségben és a társadalomban.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Pardon? Hogy a rendszerváltás elérte volna a nők ügyeit is? Tessék mondani, ez ugyanaz az Európa, mint ami néhány éve az abortusz szigorításától volt hangos? Óvatosan húzom ki a kezem a biliből, szeretném azt hinni, hogy igen.</p>
+        <p style="font-family:var(--font-serif); font-size:20px; line-height:1.85; color:var(--z-ink); margin:0 0 24px">Szeretném hinni, hogy elértük a gödör alját, és innen már csak felfelé visz az út. Egy olyan helyre, ahol számít az ember, számít a tapasztalat, és a szakértők szava is legalább annyit, mint az áldozatoké. Ahol a beleegyezés a kérdés, nem a védekezés, és ahol vigyázunk egymásra, vigyáznak ránk. Ehhez viszont nemcsak olyan törvények kellenek, amik ezt tükrözik majd. Legalább ennyire kellünk mi is, a szemléletváltás, hogy van közünk hozzá. Hogy ne a vakszerencsén múljon az áldozatok sorsa.</p>
+      
+      <div style="clear:both; margin-top:48px; padding-top:28px; border-top:1px solid rgba(42,35,32,.18)">
+        <a href="szovegek.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--z-red); text-decoration:none">← Összes szöveg</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1440, &quot;height&quot;: 1100 },
+  &quot;colorRed&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#7A1416&quot;, &quot;#AD4B34&quot;, &quot;#355061&quot;, &quot;#49616F&quot;], &quot;default&quot;: &quot;#7A1416&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorTerra&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#AD4B34&quot;, &quot;#7A1416&quot;, &quot;#B5652B&quot;, &quot;#355061&quot;], &quot;default&quot;: &quot;#AD4B34&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorNavy&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#355061&quot;, &quot;#49616F&quot;, &quot;#2E3A44&quot;, &quot;#7A1416&quot;], &quot;default&quot;: &quot;#355061&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorSlate&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#49616F&quot;, &quot;#355061&quot;, &quot;#5A6E5A&quot;, &quot;#AD4B34&quot;], &quot;default&quot;: &quot;#49616F&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorPaper&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#E2DDD1&quot;, &quot;#EDE7DB&quot;, &quot;#D5CFC0&quot;, &quot;#DED4C0&quot;], &quot;default&quot;: &quot;#E2DDD1&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; }
+}">
+class Component extends DCLogic {
+  constructor(props) { super(props); this.rootRef = React.createRef(); }
+  palette() {
+    return {
+      red: this.props.colorRed || "#7A1416",
+      terra: this.props.colorTerra || "#AD4B34",
+      navy: this.props.colorNavy || "#355061",
+      slate: this.props.colorSlate || "#49616F",
+      paper: this.props.colorPaper || "#E2DDD1",
+    };
+  }
+  applyVars() {
+    const el = this.rootRef.current; if (!el) return;
+    const p = this.palette();
+    el.style.setProperty("--z-red", p.red);
+    el.style.setProperty("--z-terra", p.terra);
+    el.style.setProperty("--z-navy", p.navy);
+    el.style.setProperty("--z-slate", p.slate);
+    el.style.setProperty("--z-paper", p.paper);
+    el.style.setProperty("--z-hero", p.red);
+  }
+  componentDidMount() { this.applyVars(); }
+  componentDidUpdate() { this.applyVars(); }
+  renderVals() { return { rootRef: this.rootRef }; }
+}
+</script>
+</body>
+</html>
