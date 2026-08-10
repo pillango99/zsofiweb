@@ -14,7 +14,7 @@
 <style>
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0}
+  body{margin:0;background:#D5CFC0}
   a{color:#7A1416}
   a:hover{color:#5A1012}
   .z-navlink{transition:opacity var(--dur) var(--ease)}
@@ -27,10 +27,10 @@
 </style>
 </helmet>
 
-<div ref="{{ rootRef }}" style="--z-red: #7A1416; --z-red-deep: #5A1012; --z-terra: #AD4B34; --z-navy: #355061; --z-slate: #49616F; --z-paper: #E2DDD1; --z-paper-2: #D5CFC0; --z-ink: #2A2320; --z-light: #EDE7DB; --z-hero: #7A1416; background: var(--z-paper); color: #2A2320; font-family: var(--font-mono); min-height: 100vh; position: relative; overflow-x: hidden">
+<div ref="{{ rootRef }}" style="--z-red: #7A1416; --z-red-deep: #5A1012; --z-terra: #AD4B34; --z-navy: #355061; --z-slate: #49616F; --z-paper: #E2DDD1; --z-paper-2: #D5CFC0; --z-ink: #2A2320; --z-light: #EDE7DB; --z-hero: #7A1416; background: var(--z-paper); color: #2A2320; font-family: var(--font-mono); max-width:1440px; margin:0 auto; min-height:100vh; position: relative; overflow-x: hidden">
 
   <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 44px; background-color:var(--z-red); background-image:url(assets/zsofi/grain.png); background-size:220px; border-bottom:2px solid var(--z-red-deep)">
-    <a href="index.dc.html" style="font-family:var(--font-mono); font-weight:600; text-transform:uppercase; letter-spacing:.2em; font-size:10px; color:var(--z-light); text-decoration:none; white-space:nowrap">Mózes Zsófi</a>
+    <a href="index.html" style="font-family:var(--font-mono); font-weight:600; text-transform:uppercase; letter-spacing:.2em; font-size:10px; color:var(--z-light); text-decoration:none; white-space:nowrap">Mózes Zsófi</a>
     <nav class="z-navlinks" style="display:flex; align-items:center; gap:28px; flex-wrap:wrap; justify-content:flex-end">
     <a class="z-navlink" aria-current="page" href="rolam.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:8px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Rólam</a>
     <a class="z-navlink" href="szovegek.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:8px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Szövegek</a>
@@ -50,14 +50,14 @@
   <!-- QUOTE STRIP -->
   
 
-  <section class="z-about" style="position: relative; background-color: var(--z-red); background-image: url(assets/zsofi/grain.png); background-size: 220px; display: grid; grid-template-columns: .85fr 1.15fr; gap: 0; height: 404px; width: 930px">
-    <div style="position: relative; background-color: var(--z-red); background-image: url(assets/zsofi/grain.png); background-size: 220px; display: flex; flex-direction: column; justify-content: center; padding: 80px 64px; overflow: hidden; height: 406px; width: 610px; border-width: 0px; border-style: solid; border-color: #5A1012">
+  <section class="z-about" style="position: relative; background-color: var(--z-red); background-image: url(assets/zsofi/grain.png); background-size: 220px; display: grid; grid-template-columns: .85fr 1.15fr; gap: 0; min-height: 404px; width: 100%">
+    <div style="position: relative; background-color: var(--z-red); background-image: url(assets/zsofi/grain.png); background-size: 220px; display: flex; flex-direction: column; justify-content: center; padding: 80px 64px; overflow: hidden; height: 100%; width: 100%; border-width: 0px; border-style: solid; border-color: #5A1012">
       
       <h1 style="font-family: var(--font-mono); font-weight: 600; font-size: 18px; letter-spacing: .03em; text-transform: uppercase; line-height: 1; color: var(--z-light); margin: 0 0 34px; transform: translate(0px, -47px)">MÓZES ZSÓFI</h1><p style="font-family: var(--font-mono); font-weight: 600; font-size: 8px; letter-spacing: .3em; text-transform: uppercase; color: var(--z-light); opacity: .7; margin: 0 0 14px; transform: translate(0px, -66px)">Író · Költő</p><div style="position: relative; z-index: 2; transform: translate(0px, -36px)">
         <p style="font-family:var(--font-serif); font-size:13px; line-height:1.75; color:var(--z-light); margin:18px 0 0">A szövegeim nyersek és pontosak. Nem szépítenek, de nem is hagynak magadra: van bennük egy irány, ami mindig kifelé mutat a gödörből.</p>
         <p style="font-family:var(--font-serif); font-size:13px; line-height:1.75; color:var(--z-light); margin:18px 0 0">Írás közben abban hiszek, hogy a nyelv nemcsak dokumentálja, hanem alakítja is a tapasztalatot — és hogy a pontosan megnevezett fájdalom már kevésbé tud fogva tartani.</p>
       </div>
-    </div><div style="position: relative; background-color: var(--z-red-deep); background-image: url(assets/zsofi/grain.png); background-size: 220px; overflow: hidden; height: 406px; width: 342px">
+    </div><div style="position: relative; background-color: var(--z-red-deep); background-image: url(assets/zsofi/grain.png); background-size: 220px; overflow: hidden; height: 100%; width: 100%">
       
       
     <image-slot id="z-rolam-selfie" src="assets/zsofi/mirror.png" shape="rect" fit="cover" placeholder="Húzz ide egy szelfit" style="position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-55%, -52%); display: block; width: 227px; height: 312px; border: 4px solid var(--z-light); box-shadow: 0 20px 50px rgba(0,0,0,.32)"></image-slot></div>
