@@ -20,15 +20,41 @@
   .z-navlink{transition:opacity var(--dur) var(--ease)}
   .z-navlink:hover{opacity:1!important}
   .z-navlink[aria-current]{opacity:1!important;border-bottom:2px solid currentColor;padding-bottom:3px}
-  @media(max-width:820px){ .z-navlinks{gap:16px!important} .z-navlink{font-size:7px!important;letter-spacing:.1em!important} }
+  
   .z-card{transition:transform var(--dur) var(--ease)}
   .z-card:hover{transform:translateY(-3px)}
   ::selection{background:#7A1416;color:#EDE7DB}
-  @media(max-width:600px){ .z-writings{grid-template-columns:1fr!important} }
+  
 </style>
+<script>
+(function(){
+  var W = 1440;
+  function shell(){
+    return document.querySelector('[data-om-fit]') ||
+           document.querySelector('#dc-root > .sc-host > div') ||
+           document.querySelector('#dc-root > div');
+  }
+  function fit(){
+    var el = shell(); if(!el) return;
+    el.setAttribute('data-om-fit','1');
+    el.style.width = W + 'px';
+    el.style.maxWidth = 'none';
+    el.style.transformOrigin = 'top left';
+    var s = Math.min(1, window.innerWidth / W);
+    el.style.transform = s < 1 ? 'scale(' + s + ')' : 'none';
+    el.style.marginLeft = (s < 1 ? 0 : Math.max(0, (window.innerWidth - W) / 2)) + 'px';
+    document.body.style.height = (el.offsetHeight * s) + 'px';
+    document.body.style.overflowX = 'hidden';
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', function(){ fit(); setTimeout(fit,300); setTimeout(fit,1200); });
+  document.addEventListener('DOMContentLoaded', function(){ fit(); setTimeout(fit,200); });
+  setInterval(fit, 1500);
+})();
+</script>
 </helmet>
 
-<div ref="{{ rootRef }}" style="--z-red:#7A1416; --z-red-deep:#5A1012; --z-terra:#AD4B34; --z-navy:#355061; --z-slate:#49616F; --z-paper:#E2DDD1; --z-paper-2:#D5CFC0; --z-ink:#2A2320; --z-light:#EDE7DB; --z-hero:#7A1416; background:var(--z-paper); color:#2A2320; font-family:var(--font-mono); max-width:1440px; margin:0 auto; min-height:100vh; position:relative; overflow-x:hidden">
+<div ref="{{ rootRef }}" style="--z-red:#7A1416; --z-red-deep:#5A1012; --z-terra:#AD4B34; --z-navy:#355061; --z-slate:#49616F; --z-paper:#E2DDD1; --z-paper-2:#D5CFC0; --z-ink:#2A2320; --z-light:#EDE7DB; --z-hero:#7A1416; background:var(--z-paper); color:#2A2320; font-family:var(--font-mono); width:1440px; min-height:100vh; position:relative; overflow-x:hidden">
 
   <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 44px; background-color:var(--z-red); background-image:url(assets/zsofi/grain.png); background-size:220px; border-bottom:2px solid var(--z-red-deep)">
     <a href="index.html" style="font-family:var(--font-mono); font-weight:600; text-transform:uppercase; letter-spacing:.2em; font-size:10px; color:var(--z-light); text-decoration:none; white-space:nowrap">Mózes Zsófi</a>
