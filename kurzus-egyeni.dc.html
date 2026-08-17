@@ -43,7 +43,9 @@
     var s = window.innerWidth / W;
     el.style.transform = 'scale(' + s + ')';
     el.style.marginLeft = '0px';
-    document.body.style.height = (el.offsetHeight * s) + 'px';
+    document.body.style.height = el.getBoundingClientRect().height + 'px';
+    document.documentElement.style.background = '#1C0A0B';
+    document.body.style.background = '#1C0A0B';
     document.body.style.overflowX = 'hidden';
   }
   window.addEventListener('resize', fit);
@@ -54,7 +56,7 @@
 </script>
 </helmet>
 
-<div ref="{{ rootRef }}" style="--z-red:#7A1416; --z-red-deep:#5A1012; --z-terra:#AD4B34; --z-navy:#355061; --z-slate:#49616F; --z-paper:#E2DDD1; --z-paper-2:#D5CFC0; --z-ink:#2A2320; --z-light:#EDE7DB; --z-hero:#7A1416; background:var(--z-paper); color:#2A2320; font-family:var(--font-mono); width:1440px; min-height:100vh; position:relative; overflow-x:hidden">
+<div ref="{{ rootRef }}" style="--z-red:#7A1416; --z-red-deep:#5A1012; --z-terra:#AD4B34; --z-navy:#355061; --z-slate:#49616F; --z-paper:#E2DDD1; --z-paper-2:#D5CFC0; --z-ink:#2A2320; --z-light:#EDE7DB; --z-hero:#7A1416; background:var(--z-paper); color:#2A2320; font-family:var(--font-mono); width:1440px; position:relative; overflow-x:hidden">
 
   <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 44px; background-color:var(--z-red); background-image:url(assets/zsofi/grain.png); background-size:220px; border-bottom:2px solid var(--z-red-deep)">
     <a href="index.html" style="font-family:var(--font-mono); font-weight:600; text-transform:uppercase; letter-spacing:.2em; font-size:10px; color:var(--z-light); text-decoration:none; white-space:nowrap">Mózes Zsófi</a>

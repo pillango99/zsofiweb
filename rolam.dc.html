@@ -42,7 +42,9 @@
     var s = window.innerWidth / W;
     el.style.transform = 'scale(' + s + ')';
     el.style.marginLeft = '0px';
-    document.body.style.height = (el.offsetHeight * s) + 'px';
+    document.body.style.height = el.getBoundingClientRect().height + 'px';
+    document.documentElement.style.background = '#1C0A0B';
+    document.body.style.background = '#1C0A0B';
     document.body.style.overflowX = 'hidden';
   }
   window.addEventListener('resize', fit);
