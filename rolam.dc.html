@@ -14,7 +14,7 @@
 <style>
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:#D5CFC0}
+  body{margin:0}
   a{color:#7A1416}
   a:hover{color:#5A1012}
   .z-navlink{transition:opacity var(--dur) var(--ease)}
@@ -39,9 +39,9 @@
     el.style.width = W + 'px';
     el.style.maxWidth = 'none';
     el.style.transformOrigin = 'top left';
-    var s = Math.min(1, window.innerWidth / W);
-    el.style.transform = s < 1 ? 'scale(' + s + ')' : 'none';
-    el.style.marginLeft = (s < 1 ? 0 : Math.max(0, (window.innerWidth - W) / 2)) + 'px';
+    var s = window.innerWidth / W;
+    el.style.transform = 'scale(' + s + ')';
+    el.style.marginLeft = '0px';
     document.body.style.height = (el.offsetHeight * s) + 'px';
     document.body.style.overflowX = 'hidden';
   }
@@ -80,8 +80,9 @@
     <div style="position: relative; background-color: var(--z-red); background-image: url(assets/zsofi/grain.png); background-size: 220px; display: flex; flex-direction: column; justify-content: center; padding: 80px 64px; overflow: hidden; height: 446px; width: 891px; border-width: 0px; border-style: solid; border-color: #5A1012">
       
       <h1 style="font-family: var(--font-mono); font-weight: 600; font-size: 18px; letter-spacing: .03em; text-transform: uppercase; line-height: 1; color: var(--z-light); margin: 0 0 34px; transform: translate(0px, -47px)">MÓZES ZSÓFI</h1><p style="font-family: var(--font-mono); font-weight: 600; font-size: 8px; letter-spacing: .3em; text-transform: uppercase; color: var(--z-light); opacity: .7; margin: 0 0 14px; transform: translate(0px, -66px)">Író · Költő</p><div style="position: relative; z-index: 2; transform: translate(0px, -36px); width: 618px; height: 206px">
-        <p style="font-family:var(--font-serif); font-size:13px; line-height:1.75; color:var(--z-light); margin:18px 0 0">A szövegeim nyersek és pontosak. Nem szépítenek, de nem is hagynak magadra: van bennük egy irány, ami mindig kifelé mutat a gödörből.</p>
-        <p style="font-family:var(--font-serif); font-size:13px; line-height:1.75; color:var(--z-light); margin:18px 0 0">Írás közben abban hiszek, hogy a nyelv nemcsak dokumentálja, hanem alakítja is a tapasztalatot — és hogy a pontosan megnevezett fájdalom már kevésbé tud fogva tartani.</p>
+        <p style="font-family:var(--font-serif); font-size:13px; line-height:1.75; color:var(--z-light); margin:0">1994-ben születtem Budapesten, egy olyan családba, ahol a kimondásnak nem volt gyakorlata. Fullasztó tud lenni az évtizedes elfojtás, így hát írni kezdtem, és ahogy jöttek a szavak, úgy nőtt egyre a szabadság is.</p>
+        <p style="font-family:var(--font-serif); font-size:13px; line-height:1.75; color:var(--z-light); margin:18px 0 0">Újságíróként éveken át olyan történetekkel foglalkoztam, amelyekkel nem könnyű szembesülni, íróként ugyanez mozgat, hogy megtaláljam hozzá a szükséges szavakat. És ezzel dolgozunk a műhelyeken is, addig gyúrjuk, nyújtjuk, csiszoljuk a szövegeket, amíg a helyére nem kerül minden mondat. És akkor újra levegőhöz jutunk.</p>
+        <p style="font-family:var(--font-serif); font-size:13px; line-height:1.75; color:var(--z-light); margin:18px 0 0">Írásaim megjelentek a WMN oldalán, a <em>Túléltem</em> című kötetben és a Felhő Café felületén. Szerkesztettem Péterfy-Novák Éva <em>A Nevers-vágás</em> című novelláskötetét, és dolgoztam a Loupe könyveken is. 2024 óta a Liberanos Akadémián tanítok.</p>
       </div>
     </div><div style="position: relative; background-color: var(--z-red-deep); background-image: url(assets/zsofi/grain.png); background-size: 220px; overflow: hidden; height: 449px; width: 100%">
       
@@ -89,7 +90,7 @@
     <image-slot id="z-rolam-selfie" src="assets/zsofi/mirror.png" shape="rect" fit="cover" placeholder="Húzz ide egy szelfit" style="position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-55%, -52%); display: block; width: 227px; height: 312px; border: 4px solid var(--z-light); box-shadow: 0 20px 50px rgba(0,0,0,.32)"></image-slot></div>
     
   </section><section style="background-color: var(--z-paper); background-image: url(assets/zsofi/grain.png); background-size: 220px; padding: 80px 44px; display: flex; align-items: center; justify-content: center">
-    <p style="font-family:var(--font-serif); font-style:italic; font-size:clamp(13px,1.7vw,21px); line-height:1.55; color:var(--z-red); text-align:center; max-width:760px; margin:0">„Az alagútból már kint vagyok, és stabil léptekkel haladok tovább."</p>
+    <p style="font-family:var(--font-serif); font-style:italic; font-size:clamp(13px,1.7vw,21px); line-height:1.55; color:var(--z-red); text-align:center; max-width:760px; margin:0">„Csendben zajlik a munka, alig észrevehetően, azok látják csak, akik egészen közelről bár, de hangtalanul figyelnek. Akik látják, érzik, hogy zajnak helye itt többé már nincs.”</p>
   </section><dc-import name="Footer" hint-size="100%,320px"></dc-import>
 
 </div>

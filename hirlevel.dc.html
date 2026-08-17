@@ -13,7 +13,7 @@
 <style>
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:#D5CFC0}
+  body{margin:0}
   a{color:#7A1416}
   a:hover{color:#5A1012}
   .z-navlink{transition:opacity var(--dur) var(--ease)}
@@ -39,9 +39,9 @@
     el.style.width = W + 'px';
     el.style.maxWidth = 'none';
     el.style.transformOrigin = 'top left';
-    var s = Math.min(1, window.innerWidth / W);
-    el.style.transform = s < 1 ? 'scale(' + s + ')' : 'none';
-    el.style.marginLeft = (s < 1 ? 0 : Math.max(0, (window.innerWidth - W) / 2)) + 'px';
+    var s = window.innerWidth / W;
+    el.style.transform = 'scale(' + s + ')';
+    el.style.marginLeft = '0px';
     document.body.style.height = (el.offsetHeight * s) + 'px';
     document.body.style.overflowX = 'hidden';
   }
@@ -85,7 +85,7 @@
   <div class="z-nl" style="position: relative; z-index: 1; width: 889px; max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; height: 413px">
       <div style="background-color: var(--z-paper); background-image: url(assets/zsofi/grain.png); background-size: 220px; display: flex; flex-direction: column; justify-content: center; padding: 48px 44px; aspect-ratio:1/1; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.45)">
         <h2 style="font-family:var(--font-mono); font-weight:600; font-size:clamp(16px,2vw,24px); letter-spacing:.03em; text-transform:uppercase; line-height:1.12; color:var(--z-red); margin:0 0 22px">Csend,<br>semmi zaj</h2>
-        <p style="font-family:var(--font-serif); font-size:13px; line-height:1.75; color:var(--z-ink); margin:0">Havonta egyszer írok: egy új vers vagy prózavers, néhány szó a műhelyekről, és semmi több. Nincs reklám, nincs zaj — csak a szöveg.</p>
+        <p style="font-family:var(--font-serif); font-size:13px; line-height:1.75; color:var(--z-ink); margin:0">Havonta egyszer megírom, min dolgozom: írások, műhelyek és történetek.</p>
         <p style="font-family:var(--font-serif); font-size:13px; line-height:1.75; color:var(--z-ink); margin:18px 0 0">Bármikor leiratkozhatsz, egyetlen kattintással.</p>
       </div><div style="position: relative; background-color: var(--z-red-deep); background-image: url(assets/zsofi/grain.png); background-size: 240px; display: flex; flex-direction: column; justify-content: center; padding: 48px 44px; aspect-ratio:1/1; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.45)">
         <p style="font-family:var(--font-mono); font-weight:600; font-size:8px; letter-spacing:.28em; text-transform:uppercase; color:var(--z-light); opacity:.72; margin:0 0 18px">Feliratkozás</p>

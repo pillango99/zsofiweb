@@ -13,7 +13,7 @@
 <style>
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:#D5CFC0}
+  body{margin:0}
   a{color:#7A1416}
   a:hover{color:#5A1012}
   .z-navlink{transition:opacity var(--dur) var(--ease)}
@@ -41,9 +41,9 @@
     el.style.width = W + 'px';
     el.style.maxWidth = 'none';
     el.style.transformOrigin = 'top left';
-    var s = Math.min(1, window.innerWidth / W);
-    el.style.transform = s < 1 ? 'scale(' + s + ')' : 'none';
-    el.style.marginLeft = (s < 1 ? 0 : Math.max(0, (window.innerWidth - W) / 2)) + 'px';
+    var s = window.innerWidth / W;
+    el.style.transform = 'scale(' + s + ')';
+    el.style.marginLeft = '0px';
     document.body.style.height = (el.offsetHeight * s) + 'px';
     document.body.style.overflowX = 'hidden';
   }
@@ -96,7 +96,7 @@
       <div style="position: relative; z-index: 1">
         <p style="font-family:var(--font-mono); font-weight:600; font-size:8px; letter-spacing:.28em; text-transform:uppercase; color:var(--z-light); opacity:.72; margin:0 0 24px">Elérhetőség</p>
         <a class="z-link" href="mailto:hello@mozeszsofi.hu" style="display:block; font-family:var(--font-mono); font-size:12px; letter-spacing:.04em; color:var(--z-light); text-decoration:none; opacity:.9; margin-bottom:26px; transition:opacity var(--dur) var(--ease)">hello@mozeszsofi.hu</a>
-        <p style="font-family:var(--font-serif); font-size:11px; line-height:1.7; color:var(--z-light); opacity:.9; margin:0 0 26px; max-width:340px">Felolvasás, közös projekt, műhely vagy csak egy gondolat — minden levélnek örülök. Néhány napon belül válaszolok.</p>
+        <p style="font-family:var(--font-serif); font-size:11px; line-height:1.7; color:var(--z-light); opacity:.9; margin:0 0 26px; max-width:340px">Ha kérdésed van, vagy megosztanál egy gondolatot, írj. Néhány napon belül válaszolok.</p>
         <div style="display:flex; gap:24px">
           <a class="z-link" href="https://www.instagram.com/mozeszsofi/" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-weight:600; font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:var(--z-light); text-decoration:none; opacity:.85; transition:opacity var(--dur) var(--ease)">Instagram</a>
           <a class="z-link" href="https://www.facebook.com/mozeszsofi/" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-weight:600; font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:var(--z-light); text-decoration:none; opacity:.85; transition:opacity var(--dur) var(--ease)">Facebook</a>
