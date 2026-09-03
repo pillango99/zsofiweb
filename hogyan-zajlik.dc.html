@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="styles.css">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  a{color:#7A1416}
+  a:hover{color:#5A1012}
+  .z-navlink{transition:opacity var(--dur) var(--ease)}
+  .z-navlink:hover{opacity:1!important}
+  .z-navlink[aria-current]{opacity:1!important;border-bottom:2px solid currentColor;padding-bottom:3px}
+  
+  .z-card{transition:transform var(--dur) var(--ease)}
+  .z-card:hover{transform:translateY(-3px)}
+  ::selection{background:#7A1416;color:#EDE7DB}
+  
+</style>
+<script>
+(function(){
+  var W = 1440;
+  function shell(){
+    return document.querySelector('[data-om-fit]') ||
+           document.querySelector('#dc-root > .sc-host > div') ||
+           document.querySelector('#dc-root > div');
+  }
+  function fit(){
+    var el = shell(); if(!el) return;
+    el.setAttribute('data-om-fit','1');
+    el.style.width = W + 'px';
+    el.style.maxWidth = 'none';
+    el.style.transformOrigin = 'top left';
+    var s = window.innerWidth / W;
+    el.style.transform = 'scale(' + s + ')';
+    el.style.position = 'absolute';
+    el.style.top = '0';
+    el.style.left = '0';
+    el.style.marginLeft = '0px';
+    var h = Math.round(el.offsetHeight * s);
+    document.body.style.margin = '0';
+    document.body.style.height = h + 'px';
+    document.documentElement.style.height = h + 'px';
+    document.documentElement.style.background = '#1C0A0B';
+    document.body.style.background = '#1C0A0B';
+    document.body.style.overflowX = 'hidden';
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', function(){ fit(); setTimeout(fit,300); setTimeout(fit,1200); });
+  document.addEventListener('DOMContentLoaded', function(){ fit(); setTimeout(fit,200); });
+  setInterval(fit, 1500);
+})();
+</script>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--z-red:#7A1416; --z-red-deep:#5A1012; --z-terra:#AD4B34; --z-navy:#355061; --z-slate:#49616F; --z-paper:#E2DDD1; --z-paper-2:#D5CFC0; --z-ink:#2A2320; --z-light:#EDE7DB; --z-hero:#7A1416; background:var(--z-paper); color:#2A2320; font-family:var(--font-mono); width:1440px; position:relative; overflow-x:hidden">
+
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 44px; background-color:var(--z-red); background-image:url(assets/zsofi/grain.png); background-size:220px; border-bottom:2px solid var(--z-red-deep)">
+    <a href="index.html" style="font-family:var(--font-mono); font-weight:600; text-transform:uppercase; letter-spacing:.2em; font-size:12px; color:var(--z-light); text-decoration:none; white-space:nowrap">Mózes Zsófi</a>
+    <nav class="z-navlinks" style="display:flex; align-items:center; gap:28px; flex-wrap:wrap; justify-content:flex-end">
+    <a class="z-navlink" href="rolam.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:10px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Rólam</a>
+    <a class="z-navlink" href="szovegek.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:10px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Bejegyzések</a>
+    <a class="z-navlink" href="kurzusok.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:10px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Kurzusok</a>
+    <a class="z-navlink" href="hirlevel.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:10px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Hírlevél</a>
+    <a class="z-navlink" href="kapcsolat.dc.html" style="font-family:var(--font-mono); font-weight:600; font-size:10px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--z-light); opacity:.82">Kapcsolat</a>
+      <div style="display:flex; align-items:center; gap:16px; margin-left:8px">
+        <a class="z-navlink" href="https://www.instagram.com/mozeszsofi/" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex; align-items:center; color:var(--z-light); opacity:.82; text-decoration:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"></circle></svg></a>
+        <a class="z-navlink" href="https://www.facebook.com/mozeszsofi/" target="_blank" rel="noopener" aria-label="Facebook" style="display:flex; align-items:center; color:var(--z-light); opacity:.82; text-decoration:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"></path></svg></a>
+        <a class="z-navlink" href="https://substack.com/@mozeszsofi" target="_blank" rel="noopener" aria-label="Substack" style="display:flex; align-items:center; color:var(--z-light); opacity:.82; text-decoration:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v3.2H3V3zm0 5.4h18v3.2H3V8.4zM3 13.8l9 5.2 9-5.2V21l-9-5.2L3 21v-7.2z"></path></svg></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- TITLE BAND -->
+  <section style="position:relative; background-color:var(--z-navy); background-image:url(assets/zsofi/grain.png); background-size:240px; padding:88px 44px 64px">
+    <div style="max-width:760px; margin:0 auto">
+      <p style="font-family:var(--font-mono); font-weight:600; font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--z-light); opacity:.7; margin:0 0 14px">Hogyan zajlik</p>
+      <h1 style="font-family:var(--font-mono); font-weight:600; font-size:clamp(22px,3.3vw,43px); letter-spacing:.03em; text-transform:uppercase; line-height:1.04; color:var(--z-light); margin:0">Három lépés a történettől a szövegig</h1>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section style="background-color:var(--z-paper); background-image:url(assets/zsofi/grain.png); background-size:220px; padding:72px 44px 100px">
+    <div style="max-width:var(--container); margin:0 auto">
+<div class="z-steps" style="display:grid; grid-template-columns:repeat(3,1fr); gap:32px">
+        <div>
+          <div style="font-family:var(--font-mono); font-weight:600; font-size:20px; color:var(--z-terra); margin-bottom:12px">01</div>
+          <h4 style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--z-red); margin:0 0 10px">Jelentkezés</h4>
+          <p style="font-family:var(--font-serif); font-size:14px; line-height:1.65; color:var(--z-ink); margin:0">Írj egy rövid üzenetet arról, hogy milyen történettel érkezel. A kezdő műhelyhez nincs szükség írói tapasztalatra, elég egy emlék vagy egy érzés, amiből elindulhatunk.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono); font-weight:600; font-size:20px; color:var(--z-terra); margin-bottom:12px">02</div>
+          <h4 style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--z-red); margin:0 0 10px">Közös munka</h4>
+          <p style="font-family:var(--font-serif); font-size:14px; line-height:1.65; color:var(--z-ink); margin:0">Írásgyakorlatokkal, szövegelemzéssel és visszajelzésekkel dolgozunk azon, hogy a történeted megtalálja a saját hangját.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono); font-weight:600; font-size:20px; color:var(--z-terra); margin-bottom:12px">03</div>
+          <h4 style="font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--z-red); margin:0 0 10px">A te szöveged</h4>
+          <p style="font-family:var(--font-serif); font-size:14px; line-height:1.65; color:var(--z-ink); margin:0">A műhely végére olyan írásaid születnek, amelyben a megélt tapasztalatod formát kap, és az olvasó számára is átélhető történetté válik.</p>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:52px; padding-top:28px; border-top:1px solid rgba(42,35,32,.18)">
+        <a href="index.html#kurzusok" style="font-family:var(--font-mono); font-weight:600; font-size:10px; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; color:var(--z-light); background:var(--z-red); padding:14px 26px">← Kurzusok</a>
+        <a href="index.html#bejegyzesek" style="font-family:var(--font-mono); font-weight:600; font-size:10px; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; color:var(--z-red); background:transparent; border:2px solid var(--z-red); padding:12px 24px">← Bejegyzések</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,320px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1440, &quot;height&quot;: 1100 },
+  &quot;colorRed&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#7A1416&quot;, &quot;#AD4B34&quot;, &quot;#355061&quot;, &quot;#49616F&quot;], &quot;default&quot;: &quot;#7A1416&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorTerra&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#AD4B34&quot;, &quot;#7A1416&quot;, &quot;#B5652B&quot;, &quot;#355061&quot;], &quot;default&quot;: &quot;#AD4B34&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorNavy&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#355061&quot;, &quot;#49616F&quot;, &quot;#2E3A44&quot;, &quot;#7A1416&quot;], &quot;default&quot;: &quot;#355061&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorSlate&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#49616F&quot;, &quot;#355061&quot;, &quot;#5A6E5A&quot;, &quot;#AD4B34&quot;], &quot;default&quot;: &quot;#49616F&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; },
+  &quot;colorPaper&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;options&quot;: [&quot;#E2DDD1&quot;, &quot;#EDE7DB&quot;, &quot;#D5CFC0&quot;, &quot;#DED4C0&quot;], &quot;default&quot;: &quot;#E2DDD1&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Színek&quot; }
+}">
+class Component extends DCLogic {
+  constructor(props) { super(props); this.rootRef = React.createRef(); }
+  palette() {
+    return {
+      red: this.props.colorRed || "#7A1416",
+      terra: this.props.colorTerra || "#AD4B34",
+      navy: this.props.colorNavy || "#355061",
+      slate: this.props.colorSlate || "#49616F",
+      paper: this.props.colorPaper || "#E2DDD1",
+    };
+  }
+  applyVars() {
+    const el = this.rootRef.current; if (!el) return;
+    const p = this.palette();
+    el.style.setProperty("--z-red", p.red);
+    el.style.setProperty("--z-terra", p.terra);
+    el.style.setProperty("--z-navy", p.navy);
+    el.style.setProperty("--z-slate", p.slate);
+    el.style.setProperty("--z-paper", p.paper);
+    el.style.setProperty("--z-hero", p.red);
+  }
+  componentDidMount() { this.applyVars(); }
+  componentDidUpdate() { this.applyVars(); }
+  renderVals() { return { rootRef: this.rootRef }; }
+}
+</script>
+</body>
+</html>
